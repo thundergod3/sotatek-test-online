@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+import { Switch, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import "./App.scss";
+
+import { TodoProvider } from "./contexts/TodoContext";
+
+import Homepage from "./pages/Homepage";
+import CreateTaskPage from "./pages/CreateTaskPage";
+
+const App = (): JSX.Element => {
+	const { todoStatus, todoDate, handleChangeTodoStatus, handleChangeTodoTime } = useContext(TodoProvider);
+
+	return (
+		<Switch>
+			<Route exact path="/" component={Homepage} />
+			<Route path="/create" component={CreateTaskPage} />
+		</Switch>
+	);
+};
 
 export default App;

@@ -1,0 +1,19 @@
+.bulk-box {
+	position: fixed;
+	bottom: 0;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding: 20px;
+	background: #eee;
+
+	.box__title {
+		flex: 0.95;
+	}
+
+	.item__buttonContainer {
+		flex: 0.05;
+		display: flex;
+		align-items: center;
+	}
+}

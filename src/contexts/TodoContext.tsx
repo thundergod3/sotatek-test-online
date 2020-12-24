@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useState } from "react";
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -19,11 +19,9 @@ interface StateCreateTaskI {
 }
 
 const TodoContext = ({ children }: Props): JSX.Element => {
-	const [todoList, setTodoList] = useState<TodoListI | any>(
-		JSON.parse(localStorage.getItem("todoList") || "[]") || []
-	);
+	const [todoList, setTodoList] = useState<TodoListI | any>(JSON.parse(localStorage.getItem("todoList") || "[]"));
 	const [searchTodoList, setSearchTodoList] = useState<TodoListI | any>(
-		JSON.parse(localStorage.getItem("searchTodoList") || "[]") || []
+		JSON.parse(localStorage.getItem("searchTodoList") || "[]")
 	);
 	const [keyword, setKeyword] = useState<string>("");
 	const [listIdChecked, setListIdChecked] = useState<Array<string>>([]);

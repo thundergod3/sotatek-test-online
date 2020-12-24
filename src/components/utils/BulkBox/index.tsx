@@ -6,10 +6,8 @@ import Button from "../Button";
 
 import "./style.scss";
 
-interface Props {}
-
-const BulkBox = ({}: Props): JSX.Element => {
-	const { listIdChecked, deleteMultipleTodoTask } = useContext(TodoProvider);
+const BulkBox = (): JSX.Element => {
+	const { deleteMultipleTodoTask } = useContext(TodoProvider);
 
 	return (
 		<div className="bulk-box">
